@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\api\AuthorController;
 use App\Http\Controllers\api\ProfileController;
+use App\Http\Controllers\api\Setup\StudentClassController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -71,7 +72,19 @@ Route::group(["middleware"=>"auth:api"],function (){
     //E
     //-------------------------------------------------
 
+    //S Setups
+    Route::prefix("setups")->group(function (){
+                                                    //student class
+        Route::get("/student/class/view",[StudentClassController::class,"studentClassView"])->name("api.studentClassView");
+        Route::get("/student/class/add",[StudentClassController::class,"studentClassAdd"])->name("api.studentClassAdd");
+        Route::post("/store/studentClass",[StudentClassController::class,"storeStudentClass"])->name("api.storeStudentClass");
+        Route::get("/edite/studentaClass/{id}",[StudentClassController::class,"studentClassEdite"])->name("api.studentClassEdite");
+        Route::post("/update/studentClass/{id}",[StudentClassController::class,"updateStudentClass"])->name("api.updateStudentClass");
+        Route::get("/delete/studentaClass/{id}",[StudentClassController::class,"deleteStudentClass"])->name("api.deleteStudentClass");
 
+    });
+    //E
+    //-------------------------------------------------
 
 
 

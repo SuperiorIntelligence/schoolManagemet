@@ -1,9 +1,10 @@
 <?php
 
-use App\Models\Author;
+//use App\Models\Author;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\api\AuthorController;
-use App\Http\Controllers\api\ProfileController;
+//use App\Http\Controllers\api\AuthorController;
+//use App\Http\Controllers\api\ProfileController;
+//use App\Http\Controllers\api\Setup\StudentClassController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

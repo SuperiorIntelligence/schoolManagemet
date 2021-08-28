@@ -56,6 +56,12 @@ function loadPage(url,method,place,kind,data){
 
     }
 
+    else if(data == 5){
+
+        var className = document.getElementById("className").value
+        bodyFormData.append("className",className);
+    }
+
     var cookievalue = getCookie("Authorization");
     // alert(cookievalue)
     // alert(typeof(cookievalue))
@@ -132,13 +138,13 @@ function loadPage(url,method,place,kind,data){
     }).catch(err=>{
         // console.log(err);
                                                                             // Remove from comment
-        // if(err == "Error: Request failed with status code 422")
-        //     alert("Error : Check the fields again")
-        // if(err == "Error: Request failed with status code 401")
-        //      window.location = "http://localhost:8000/login"
+        if(err == "Error: Request failed with status code 422")
+            alert("Error : Check the fields again")
+        else if(err == "Error: Request failed with status code 401")
+             window.location = "http://localhost:8000/login"
                                                                             // Remove from comment
-        console.log(err)
-        // alert(err)
+        // console.log(err)
+        alert(err)
         // else if(err == "Error: Request failed with status code 401" || err == "Error: Request failed with status code 405")
         //     window.location = "http://localhost:8000/login"
         // else if(err)

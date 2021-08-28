@@ -24,7 +24,7 @@
 
         <li class="m-menu__item  m-menu__item--active" aria-haspopup="true"  m-menu-submenu-toggle="hover">
 
-            <a  href="javascript:;" class="m-menu__link m-menu__toggle">
+            <a  href="#" class="m-menu__link m-menu__toggle">
                 <span class="m-menu__item-here"></span>
                 <i class="m-menu__link-icon flaticon-cogwheel"></i>
                 <span class="m-menu__link-text">
@@ -69,7 +69,7 @@
         </li>
         <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
 
-            <a  href="javascript:;" class="m-menu__link m-menu__toggle">
+            <a  href="#" class="m-menu__link m-menu__toggle">
                 <span class="m-menu__item-here"></span>
                 <i class="m-menu__link-icon flaticon-user"></i>
                 <span class="m-menu__link-text">
@@ -111,29 +111,29 @@
                 </ul>
             </div>
         </li>
-        <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
-            <a  href="inner.html" class="m-menu__link ">
-                <span class="m-menu__item-here"></span>
-                <i class="m-menu__link-icon flaticon-suitcase"></i>
-                <span class="m-menu__link-text">
-										Finance
-									</span>
-            </a>
-        </li>
+{{--        <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">--}}
+{{--            <a  href="inner.html" class="m-menu__link ">--}}
+{{--                <span class="m-menu__item-here"></span>--}}
+{{--                <i class="m-menu__link-icon flaticon-suitcase"></i>--}}
+{{--                <span class="m-menu__link-text">--}}
+{{--										Finance--}}
+{{--									</span>--}}
+{{--            </a>--}}
+{{--        </li>--}}
         <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover" m-menu-link-redirect="1">
             <a  href="javascript:;" class="m-menu__link m-menu__toggle">
                 <span class="m-menu__item-here"></span>
-                <i class="m-menu__link-icon flaticon-graphic-1"></i>
+                <i class="m-menu__link-icon flaticon-folder-1 "></i>
                 <span class="m-menu__link-title">
 										<span class="m-menu__link-wrap">
 											<span class="m-menu__link-text">
-												Support
+												Setup Management
 											</span>
-											<span class="m-menu__link-badge">
-												<span class="m-badge m-badge--accent">
-													3
-												</span>
-											</span>
+{{--											<span class="m-menu__link-badge">--}}
+{{--												<span class="m-badge m-badge--accent">--}}
+{{--													3--}}
+{{--												</span>--}}
+{{--											</span>--}}
 										</span>
 									</span>
                 <i class="m-menu__ver-arrow la la-angle-right"></i>
@@ -147,24 +147,20 @@
 												<span class="m-menu__link-title">
 													<span class="m-menu__link-wrap">
 														<span class="m-menu__link-text">
-															Support
+															Setup Management
 														</span>
-														<span class="m-menu__link-badge">
-															<span class="m-badge m-badge--accent">
-																3
-															</span>
-														</span>
+
 													</span>
 												</span>
 											</span>
                     </li>
                     <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
-                        <a  href="inner.html" class="m-menu__link ">
+                        <a  href="#" class="m-menu__link " onclick="loadPage('{{route('api.studentClassView')}}','GET','Changing',1,0)">
                             <i class="m-menu__link-bullet m-menu__link-bullet--line">
                                 <span></span>
                             </i>
                             <span class="m-menu__link-text">
-													Reports
+													Student Class
 												</span>
                         </a>
                     </li>
