@@ -14,7 +14,7 @@
         <div class="d-flex align-items-center">
             <div class="mr-auto">
                 <h3 class="m-subheader__title ">
-                    Edit Student Class
+                    Add Student Year
                 </h3>
             </div>
 
@@ -36,16 +36,16 @@
 
                                     <div class="form-group m-form__group " >
                                         <label for="exampleInputEmail1">
-                                            Student Class Name<span class="text-danger"> *</span>
+                                            Student Year Number<span class="text-danger"> *</span>
                                         </label>
-                                        <input type="text" name="className" id="className" class="form-control m-input m-input--solid"  placeholder="Enter name" value="{{$editeClass->name}}">
+                                        <input type="text" name="numberYear" id="numberYear" class="form-control m-input m-input--solid"  placeholder="Enter Year">
                                     </div>
 
 
                                 </div>
                                 <div class="m-portlet__foot m-portlet__foot--fit">
                                     <div class="m-form__actions">
-                                        <button class="btn btn-success" onclick="loadPage('{{route('api.updateStudentClass',$editeClass->id)}}','post','Changing',1,5);">
+                                        <button class="btn btn-success" onclick="loadPage('{{route('api.storeStudentYear')}}','post','Changing',1,6);">
                                             Submit
                                         </button>
                                         <button type="reset" class="btn btn-secondary">

@@ -92,7 +92,7 @@
                                     </td>
                                     <td>
                                         <button type="button" class="btn m-btn--pill    btn-warning m-btn m-btn--custom"
-                                                onclick="loadPage('{{route('api.editeUser',$value->id)}}','GET','Changing',1,0);">
+                                                onclick="loadPage('{{route('api.editUser',$value->id)}}','GET','Changing',1,0);">
 
                                             Edite
                                         </button>

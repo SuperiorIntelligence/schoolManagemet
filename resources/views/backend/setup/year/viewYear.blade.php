@@ -16,7 +16,7 @@
         <div class="d-flex align-items-center">
             <div class="mr-auto">
                 <h3 class="m-subheader__title ">
-                     List
+                    List
                 </h3>
             </div>
 
@@ -31,15 +31,15 @@
                         <div class="m-portlet__head-caption">
                             <div class="m-portlet__head-title">
                                 <h3 class="m-portlet__head-text">
-                                    Student Class
+                                    Student Year
                                 </h3>
                             </div>
                         </div>
                         <div class="m-portlet__head-tools">
                             <ul class="m-portlet__nav">
                                 <li class="m-portlet__nav-item">
-                                    <button type="submit" class="btn m-btn--pill  text-dark  btn-metal" onclick="loadPage('{{route('api.studentClassAdd')}}','GET','Changing',1,0);">
-                                        Add Student Class
+                                    <button type="submit" class="btn m-btn--pill  text-dark  btn-metal" onclick="loadPage('{{route('api.studentYearAdd')}}','GET','Changing',1,0);">
+                                        Add Student Year
                                     </button>
 
                                 </li>
@@ -72,22 +72,21 @@
                                         <td></td>
                                     </tr>
                                 @else
-                                    @foreach($allData as $key => $student)
+                                    @foreach($allData as $key => $year)
                                         <tr>
                                             <th>
                                                 {{$key+1}}
                                             </th>
                                             <td>
-                                                {{$student->name}}
+                                                {{$year->name}}
                                             </td>
                                             <td>
                                                 <button type="button" class="btn m-btn--pill    btn-warning m-btn m-btn--custom"
-                                                        onclick="loadPage('{{route('api.studentClassEdit',$student->id)}}','GET','Changing',1,0);">
-
-                                                    Edite
+                                                        onclick="loadPage('{{route('api.studentYearEdit',$year->id)}}','GET','Changing',1,0);">
+                                                    Edit
                                                 </button>
                                                 <button type="button" class="btn m-btn--pill    btn-danger m-btn m-btn--custom"
-                                                        onclick="loadPage('{{route('api.deleteStudentClass',$student->id)}}','GET','Changing',1,0);">
+                                                        onclick="loadPage('{{route('api.deleteStudentYear',$year->id)}}','GET','Changing',1,0);">
                                                     Delete
                                                 </button>
                                             </td>

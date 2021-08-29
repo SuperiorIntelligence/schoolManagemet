@@ -60,6 +60,18 @@ function loadPage(url,method,place,kind,data){
 
         var className = document.getElementById("className").value
         bodyFormData.append("className",className);
+
+    }
+    else if(data == 6){
+        var numberYear = document.getElementById("numberYear").value
+            bodyFormData.append("numberYear",numberYear);
+
+    }
+    else if(data==7){
+
+        var name = document.getElementById("name").value
+        bodyFormData.append("name",name);
+
     }
 
     var cookievalue = getCookie("Authorization");

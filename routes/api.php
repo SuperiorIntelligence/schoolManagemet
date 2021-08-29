@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\api\AuthorController;
 use App\Http\Controllers\api\ProfileController;
 use App\Http\Controllers\api\Setup\StudentClassController;
+use App\Http\Controllers\api\Setup\StudentYearController;
+use App\Http\Controllers\api\Setup\StudentGroupController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -54,7 +56,7 @@ Route::group(["middleware"=>"auth:api"],function (){
         Route::get("/view",[AuthorController::class,"userView"])->name("api.userview");
         Route::get("/add",[AuthorController::class,"userAdd"])->name("api.userAdd");
         Route::post("/store",[AuthorController::class,"userStore"])->name("api.userStore");
-        Route::get("/edite/{id}",[AuthorController::class,"userEdite"])->name("api.editeUser");
+        Route::get("/edit/{id}",[AuthorController::class,"userEdit"])->name("api.editUser");
         Route::post("/update/{id}",[AuthorController::class,"userUpdate"])->name("api.userUpdate");
         Route::get("/delete/{id}",[AuthorController::class,"userDelete"])->name("api.deleteUser");
     });
@@ -74,14 +76,29 @@ Route::group(["middleware"=>"auth:api"],function (){
 
     //S Setups
     Route::prefix("setups")->group(function (){
-                                                    //student class
+                                                    //Student class
         Route::get("/student/class/view",[StudentClassController::class,"studentClassView"])->name("api.studentClassView");
         Route::get("/student/class/add",[StudentClassController::class,"studentClassAdd"])->name("api.studentClassAdd");
         Route::post("/store/studentClass",[StudentClassController::class,"storeStudentClass"])->name("api.storeStudentClass");
-        Route::get("/edite/studentaClass/{id}",[StudentClassController::class,"studentClassEdite"])->name("api.studentClassEdite");
+        Route::get("/edit/studentClass/{id}",[StudentClassController::class,"studentClassEdit"])->name("api.studentClassEdit");
         Route::post("/update/studentClass/{id}",[StudentClassController::class,"updateStudentClass"])->name("api.updateStudentClass");
-        Route::get("/delete/studentaClass/{id}",[StudentClassController::class,"deleteStudentClass"])->name("api.deleteStudentClass");
+        Route::get("/delete/studentClass/{id}",[StudentClassController::class,"deleteStudentClass"])->name("api.deleteStudentClass");
 
+                                                    //Student Year
+        Route::get("/student/year/view",[StudentYearController::class,"studentYearView"])->name("api.studentYearView");
+        Route::get("/student/year/add",[StudentYearController::class,"studentYearAdd"])->name("api.studentYearAdd");
+        Route::post("/store/studentYear",[StudentYearController::class,"storeStudentYear"])->name("api.storeStudentYear");
+        Route::get("/edit/studentYear/{id}",[StudentYearController::class,"studentYearEdit"])->name("api.studentYearEdit");
+        Route::post("/update/studentYear/{id}",[StudentYearController::class,"updateStudentYear"])->name("api.updateStudentYear");
+        Route::get("/delete/studentYear/{id}",[StudentYearController::class,"deleteStudentYear"])->name("api.deleteStudentYear");
+
+                                                    //Student Year
+        Route::get("/student/group/view",[StudentGroupController::class,"studentGroupView"])->name("api.studentGroupView");
+        Route::get("/student/group/add",[StudentGroupController::class,"studentGroupAdd"])->name("api.studentGroupAdd");
+        Route::post("/store/studentGroup",[StudentGroupController::class,"storeStudentGroup"])->name("api.storeStudentGroup");
+        Route::get("/edit/studentGroup/{id}",[StudentGroupController::class,"studentGroupEdit"])->name("api.studentGroupEdit");
+        Route::post("/update/studentGroup/{id}",[StudentGroupController::class,"updateStudentGroup"])->name("api.updateStudentGroup");
+        Route::get("/delete/studentGroup/{id}",[StudentGroupController::class,"deleteStudentGroup"])->name("api.deleteStudentGroup");
     });
     //E
     //-------------------------------------------------

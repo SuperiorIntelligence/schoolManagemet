@@ -35,7 +35,7 @@ class StudentClassController extends Controller
 
     }
 
-    public function studentClassEdite($id){
+    public function studentClassEdit($id){
 
         $editeClass = StudentClass::find($id);
         return view("backend.setup.studentClass.editeClass",compact("editeClass"));
@@ -61,5 +61,6 @@ class StudentClassController extends Controller
         return $this->studentClassView();
 
     }
+
 
 }

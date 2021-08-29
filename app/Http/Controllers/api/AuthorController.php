@@ -123,7 +123,6 @@ class AuthorController extends Controller
         return view("backend.user.addUser");
     }
 
-
     public function userStore(Request $request){
 
 //        dd("hey");
@@ -150,11 +149,10 @@ class AuthorController extends Controller
 
     }
 
-    public function userEdite($id){
+    public function userEdit($id){
         $editeData = Author::find($id);
         return view("backend.user.editeUser",compact("editeData"));
     }
-
 
     public function userUpdate(Request $request,$id){
 
@@ -170,6 +168,7 @@ class AuthorController extends Controller
 
         return $this->userView();
     }
+
     public function userDelete($id){
         $deleteUser = Author::find($id)->delete();
         DB::table("oauth_access_tokens")->where('user_id', '=', $id)->delete();

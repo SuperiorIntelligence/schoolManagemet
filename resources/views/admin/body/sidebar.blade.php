@@ -165,68 +165,23 @@
                         </a>
                     </li>
                     <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover" m-menu-link-redirect="1">
-                        <a  href="javascript:;" class="m-menu__link m-menu__toggle">
+                        <a  href="javascript:;" class="m-menu__link m-menu__toggle" onclick="loadPage('{{route('api.studentYearView')}}','GET','Changing',1,0)">
                             <i class="m-menu__link-bullet m-menu__link-bullet--line">
                                 <span></span>
                             </i>
                             <span class="m-menu__link-text">
-													Cases
+													Student Year
 												</span>
-                            <i class="m-menu__ver-arrow la la-angle-right"></i>
+
                         </a>
-                        <div class="m-menu__submenu ">
-                            <span class="m-menu__arrow"></span>
-                            <ul class="m-menu__subnav">
-                                <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
-                                    <a  href="inner.html" class="m-menu__link ">
-                                        <i class="m-menu__link-bullet m-menu__link-bullet--dot">
-                                            <span></span>
-                                        </i>
-                                        <span class="m-menu__link-text">
-																Pending
-															</span>
-                                    </a>
-                                </li>
-                                <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
-                                    <a  href="inner.html" class="m-menu__link ">
-                                        <i class="m-menu__link-bullet m-menu__link-bullet--dot">
-                                            <span></span>
-                                        </i>
-                                        <span class="m-menu__link-text">
-																Urgent
-															</span>
-                                    </a>
-                                </li>
-                                <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
-                                    <a  href="inner.html" class="m-menu__link ">
-                                        <i class="m-menu__link-bullet m-menu__link-bullet--dot">
-                                            <span></span>
-                                        </i>
-                                        <span class="m-menu__link-text">
-																Done
-															</span>
-                                    </a>
-                                </li>
-                                <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
-                                    <a  href="inner.html" class="m-menu__link ">
-                                        <i class="m-menu__link-bullet m-menu__link-bullet--dot">
-                                            <span></span>
-                                        </i>
-                                        <span class="m-menu__link-text">
-																Archive
-															</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
                     </li>
                     <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
-                        <a  href="inner.html" class="m-menu__link ">
+                        <a  href="#" class="m-menu__link " onclick="loadPage('{{route('api.studentGroupView')}}','GET','Changing',1,0)">
                             <i class="m-menu__link-bullet m-menu__link-bullet--line">
                                 <span></span>
                             </i>
                             <span class="m-menu__link-text">
-													Clients
+													Student Group
 												</span>
                         </a>
                     </li>
