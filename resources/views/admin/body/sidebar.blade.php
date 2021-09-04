@@ -186,12 +186,32 @@
                         </a>
                     </li>
                     <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
-                        <a  href="inner.html" class="m-menu__link ">
+                        <a  href="#" class="m-menu__link " onclick="loadPage('{{route('api.studentShiftView')}}','GET','Changing',1,0)">
                             <i class="m-menu__link-bullet m-menu__link-bullet--line">
                                 <span></span>
                             </i>
                             <span class="m-menu__link-text">
-													Audit
+													Student Shift
+												</span>
+                        </a>
+                    </li>
+                    <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
+                        <a  href="#" class="m-menu__link " onclick="loadPage('{{route('api.feeCategoryView')}}','GET','Changing',1,0)">
+                            <i class="m-menu__link-bullet m-menu__link-bullet--line">
+                                <span></span>
+                            </i>
+                            <span class="m-menu__link-text">
+													Fee Category
+												</span>
+                        </a>
+                    </li>
+                    <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
+                        <a  href="#" class="m-menu__link " onclick="loadPage('{{route('api.feeAmountView')}}','GET','Changing',1,0)">
+                            <i class="m-menu__link-bullet m-menu__link-bullet--line">
+                                <span></span>
+                            </i>
+                            <span class="m-menu__link-text">
+													Fee Category Amount
 												</span>
                         </a>
                     </li>

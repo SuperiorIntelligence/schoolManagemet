@@ -67,11 +67,50 @@ function loadPage(url,method,place,kind,data){
             bodyFormData.append("numberYear",numberYear);
 
     }
+
     else if(data==7){
 
         var name = document.getElementById("name").value
         bodyFormData.append("name",name);
 
+    }
+
+    else if(data == 8){
+
+        var nameShift = document.getElementById("nameShift").value
+        bodyFormData.append("nameShift",nameShift);
+
+    }
+
+    else if(data == 9){
+
+        var feeCatName = document.getElementById("feeCatName").value
+        bodyFormData.append("feeCatName",feeCatName);
+
+    }
+
+    else if(data == 10){
+
+        var feeCategoryId = document.getElementById("feeCategoryId").value;
+        var amount, i , classId;
+        amount = document.querySelectorAll(".amountInput");
+        classId = document.querySelectorAll(".classId");
+        const dataAmount = [];
+        const dataClass = [];
+        if(amount.length - 1 > 0){
+        for (i = 0; i < amount.length - 1 ; i++) {
+            dataAmount[i] = amount[i].value;
+            dataClass[i] = classId[i].value;
+        }
+
+        bodyFormData.append("feeCategoryId",feeCategoryId);
+        bodyFormData.append("Amount",dataAmount);
+        bodyFormData.append("classId",dataClass);
+        }
+        else{
+            alert("Sorry You do not select any class amount")
+            // return;
+        }
     }
 
     var cookievalue = getCookie("Authorization");
@@ -206,4 +245,22 @@ var loadFile = function(event) {
 
 
 };
+
+
+$(document).ready(function (){
+    var counter = 0 ;
+    $(document).on("click",".addeventmore",function (){
+        var whole_extra_item_add = $("#whole_extra_item_add").html();
+        $(this).closest(".add_item").append(whole_extra_item_add);
+        counter++;
+    });
+    $(document).on("click",".removeeventmore",function (event) {
+        $(this).closest(".delete_whole_extra_item_add").remove();
+        counter-=1;
+    });
+});
+
+
+
+
 

@@ -8,6 +8,9 @@ use App\Http\Controllers\api\ProfileController;
 use App\Http\Controllers\api\Setup\StudentClassController;
 use App\Http\Controllers\api\Setup\StudentYearController;
 use App\Http\Controllers\api\Setup\StudentGroupController;
+use App\Http\Controllers\api\Setup\StudentShiftController;
+use App\Http\Controllers\api\Setup\FeeCategoryController;
+use App\Http\Controllers\api\Setup\FeeAmountController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -99,6 +102,30 @@ Route::group(["middleware"=>"auth:api"],function (){
         Route::get("/edit/studentGroup/{id}",[StudentGroupController::class,"studentGroupEdit"])->name("api.studentGroupEdit");
         Route::post("/update/studentGroup/{id}",[StudentGroupController::class,"updateStudentGroup"])->name("api.updateStudentGroup");
         Route::get("/delete/studentGroup/{id}",[StudentGroupController::class,"deleteStudentGroup"])->name("api.deleteStudentGroup");
+
+                                                    // Student Shift
+        Route::get("/student/shift/view",[StudentShiftController::class,"studentShiftView"])->name("api.studentShiftView");
+        Route::get("/student/shift/add",[StudentShiftController::class,"studentShiftAdd"])->name("api.studentShiftAdd");
+        Route::post("/store/studentShift",[StudentShiftController::class,"storeStudentShift"])->name("api.storeStudentShift");
+        Route::get("/edit/studentShift/{id}",[StudentShiftController::class,"studentShiftEdit"])->name("api.studentShiftEdit");
+        Route::post("/update/studentShift/{id}",[StudentShiftController::class,"updateStudentShift"])->name("api.updateStudentShift");
+        Route::get("/delete/studentShift/{id}",[StudentShiftController::class,"deleteStudentShift"])->name("api.deleteStudentShift");
+
+                                                    // Fee Category
+        Route::get("/fee/category/view",[FeeCategoryController::class,"feeCategoryView"])->name("api.feeCategoryView");
+        Route::get("/student/fee/category/add",[FeeCategoryController::class,"feeCategoryAdd"])->name("api.feeCategoryAdd");
+        Route::post("/store/fee/category",[FeeCategoryController::class,"storeFeeCategory"])->name("api.storeFeeCategory");
+        Route::get("/edit/feeCategory/{id}",[FeeCategoryController::class,"feeCategoryEdit"])->name("api.feeCategoryEdit");
+        Route::post("/update/feeCategory/{id}",[FeeCategoryController::class,"updateFeeCategory"])->name("api.updateFeeCategory");
+        Route::get("/delete/feeCategory/{id}",[FeeCategoryController::class,"deleteFeeCategory"])->name("api.deleteFeeCategory");
+
+                                                    // Fee Category Amount
+        Route::get("/fee/amount/view",[FeeAmountController::class,"feeAmountView"])->name("api.feeAmountView");
+        Route::get("/fee/amount/add",[FeeAmountController::class,"feeAmountAdd"])->name("api.feeAmountAdd");
+        Route::post("/store/fee/amount",[FeeAmountController::class,"storeFeeAmount"])->name("api.storeFeeAmount");
+        Route::get("/edit/feeAmount/{id}",[FeeAmountController::class,"feeAmountEdit"])->name("api.feeAmountEdit");
+        Route::post("/update/feeAmount/{id}",[FeeAmountController::class,"updateFeeAmount"])->name("api.updateFeeAmount");
+        Route::get("/details/feeCategory/{id}",[FeeAmountController::class,"detailsFeeCategory"])->name("api.detailsFeeCategory");
     });
     //E
     //-------------------------------------------------
