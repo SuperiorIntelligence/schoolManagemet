@@ -111,6 +111,57 @@ function loadPage(url,method,place,kind,data){
             alert("Sorry You do not select any class amount")
             // return;
         }
+
+    }
+
+    else if (data == 11){
+
+        var examTypeName = document.getElementById("examTypeName").value
+        bodyFormData.append("examTypeName",examTypeName);
+
+    }
+
+    else if (data == 12){
+
+        var subjectName = document.getElementById("subjectName").value
+        bodyFormData.append("subjectName",subjectName);
+
+    }
+
+    else if (data == 13){
+
+        var classId = document.getElementById("classId").value;
+        var fullMark, i , passMark , subjectiveMark , subjectId;
+        subjectId = document.querySelectorAll(".subjectId");
+        fullMark = document.querySelectorAll(".fullMark");
+        passMark = document.querySelectorAll(".passMark");
+        subjectiveMark = document.querySelectorAll(".subjectiveMark");
+        const dataSubject = [];
+        const dataFullMark = [];
+        const dataPassMark = [];
+        const dataSubjectiveMark = [];
+        if(subjectId.length - 1 > 0) {
+            for (i = 0; i < subjectId.length - 1; i++) {
+                dataSubject[i] = subjectId[i].value;
+                dataFullMark[i] = fullMark[i].value;
+                dataPassMark[i] = passMark[i].value;
+                dataSubjectiveMark[i] = subjectiveMark[i].value;
+            }
+
+            bodyFormData.append("classId",classId);
+            bodyFormData.append("subjectId",dataSubject);
+            bodyFormData.append("fullMark",dataFullMark);
+            bodyFormData.append("passMark",dataPassMark);
+            bodyFormData.append("subjectiveMark",dataSubjectiveMark);
+        }
+        else{
+            alert("Sorry You do not select any class amount")
+
+            // return;
+        }
+
+
+
     }
 
     var cookievalue = getCookie("Authorization");
@@ -144,6 +195,9 @@ function loadPage(url,method,place,kind,data){
 
         document.getElementById(place).innerHTML = res.data;
 
+        if(data == 12){
+            alert("Subject Inserted Successfully ");
+        }
 
         // alert("nice")
         // function forceReloadJS() {

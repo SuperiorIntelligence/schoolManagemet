@@ -11,6 +11,9 @@ use App\Http\Controllers\api\Setup\StudentGroupController;
 use App\Http\Controllers\api\Setup\StudentShiftController;
 use App\Http\Controllers\api\Setup\FeeCategoryController;
 use App\Http\Controllers\api\Setup\FeeAmountController;
+use App\Http\Controllers\api\Setup\ExamTypeController;
+use App\Http\Controllers\api\Setup\SchoolSubjectController;
+use App\Http\Controllers\api\Setup\AssignSubjectController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -56,7 +59,7 @@ Route::group(["middleware"=>"auth:api"],function (){
 
     //S User Management
     Route::prefix("user")->group(function (){
-        Route::get("/view",[AuthorController::class,"userView"])->name("api.userview");
+        Route::get("/view",[AuthorController::class,"userView"])->name("api.s");
         Route::get("/add",[AuthorController::class,"userAdd"])->name("api.userAdd");
         Route::post("/store",[AuthorController::class,"userStore"])->name("api.userStore");
         Route::get("/edit/{id}",[AuthorController::class,"userEdit"])->name("api.editUser");
@@ -126,6 +129,30 @@ Route::group(["middleware"=>"auth:api"],function (){
         Route::get("/edit/feeAmount/{id}",[FeeAmountController::class,"feeAmountEdit"])->name("api.feeAmountEdit");
         Route::post("/update/feeAmount/{id}",[FeeAmountController::class,"updateFeeAmount"])->name("api.updateFeeAmount");
         Route::get("/details/feeCategory/{id}",[FeeAmountController::class,"detailsFeeCategory"])->name("api.detailsFeeCategory");
+
+                                                    // Exam Type
+        Route::get("/exam/type/view",[ExamTypeController::class,"ExamTypeView"])->name("api.ExamTypeView");
+        Route::get("/exam/type/add",[ExamTypeController::class,"examTypeAdd"])->name("api.examTypeAdd");
+        Route::post("/store/exam/type",[ExamTypeController::class,"storeExamType"])->name("api.storeExamType");
+        Route::get("/edit/examType/{id}",[ExamTypeController::class,"examTypeEdit"])->name("api.examTypeEdit");
+        Route::post("/update/examType/{id}",[ExamTypeController::class,"updateExamType"])->name("api.updateExamType");
+        Route::get("/delete/examType/{id}",[ExamTypeController::class,"deleteExamType"])->name("api.deleteExamType");
+
+                                                    // School Subject
+        Route::get("/school/subject/view",[SchoolSubjectController::class,"schoolSubjectView"])->name("api.schoolSubjectView");
+        Route::get("/school/subject/add",[SchoolSubjectController::class,"schoolSubjectAdd"])->name("api.schoolSubjectAdd");
+        Route::post("/store/school/subject",[SchoolSubjectController::class,"storeSchoolSubject"])->name("api.storeSchoolSubject");
+        Route::get("/edit/schoolSubject/{id}",[SchoolSubjectController::class,"schoolSubjectEdit"])->name("api.schoolSubjectEdit");
+        Route::post("/update/schoolSubject/{id}",[SchoolSubjectController::class,"updateSchoolSubject"])->name("api.updateSchoolSubject");
+        Route::get("/delete/schoolSubject/{id}",[SchoolSubjectController::class,"deleteSchoolSubject"])->name("api.deleteSchoolSubject");
+
+                                                    // Assign Subject
+        Route::get("/assign/subject/view",[AssignSubjectController::class,"assignSubjectView"])->name("api.assignSubjectView");
+        Route::get("/assign/subject/add",[AssignSubjectController::class,"assignSubjectAdd"])->name("api.assignSubjectAdd");
+        Route::post("/store/assign/subject",[AssignSubjectController::class,"storeAssignSubject"])->name("api.storeAssignSubject");
+        Route::get("/edit/assignSubject/{id}",[AssignSubjectController::class,"assignSubjectEdit"])->name("api.assignSubjectEdit");
+        Route::post("/update/assignSubject/{id}",[AssignSubjectController::class,"updateAssignSubject"])->name("api.updateAssignSubject");
+        Route::get("/details/assignSubject/{id}",[AssignSubjectController::class,"detailsAssignSubject"])->name("api.detailsAssignSubject");
     });
     //E
     //-------------------------------------------------

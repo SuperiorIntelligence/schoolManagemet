@@ -94,7 +94,7 @@
                                         <button type="button" class="btn m-btn--pill    btn-warning m-btn m-btn--custom"
                                                 onclick="loadPage('{{route('api.editUser',$value->id)}}','GET','Changing',1,0);">
 
-                                            Edite
+                                            Edit
                                         </button>
                                         <button type="button" class="btn m-btn--pill    btn-danger m-btn m-btn--custom"
                                                 onclick="loadPage('{{route('api.deleteUser',$value->id)}}','GET','Changing',1,0);">

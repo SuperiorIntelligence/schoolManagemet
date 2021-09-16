@@ -48,7 +48,7 @@
                                         <button class="btn btn-success" onclick="loadPage('{{route('api.storeStudentShift')}}','post','Changing',1,8);">
                                             Submit
                                         </button>
-                                        <button type="reset" class="btn btn-secondary">
+                                        <button type="reset" class="btn btn-secondary" onclick="loadPage('{{route('api.studentShiftView')}}','GET','Changing',1,0)">
                                             Cancel
                                         </button>
                                     </div>

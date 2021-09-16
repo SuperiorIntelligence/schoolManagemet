@@ -74,6 +74,9 @@
                                         <button class="btn btn-success" onclick="loadPage('{{route('api.userUpdate',$editeData->id)}}','POST','Changing',1,2);">
                                             Update
                                         </button>
+                                        <button class="btn btn-secondary" onclick="loadPage('{{route('api.userview')}}','GET','Changing',1,0);">
+                                            Cancel
+                                        </button>
                                     </div>
                                 </div>
                             </div>

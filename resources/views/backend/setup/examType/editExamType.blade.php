@@ -14,7 +14,7 @@
         <div class="d-flex align-items-center">
             <div class="mr-auto">
                 <h3 class="m-subheader__title ">
-                    Add Student Year
+                    Edit Exam Type
                 </h3>
             </div>
 
@@ -36,19 +36,19 @@
 
                                     <div class="form-group m-form__group " >
                                         <label for="exampleInputEmail1">
-                                            Student Year Number<span class="text-danger"> *</span>
+                                            Exam Type Name<span class="text-danger"> *</span>
                                         </label>
-                                        <input type="text" name="numberYear" id="numberYear" class="form-control m-input m-input--solid"  placeholder="Enter Year">
+                                        <input type="text" name="examTypeName" id="examTypeName" class="form-control m-input m-input--solid"  placeholder="Enter name" value="{{$editExamType->name}}">
                                     </div>
 
 
                                 </div>
                                 <div class="m-portlet__foot m-portlet__foot--fit">
                                     <div class="m-form__actions">
-                                        <button class="btn btn-success" onclick="loadPage('{{route('api.storeStudentYear')}}','post','Changing',1,6);">
-                                            Submit
+                                        <button class="btn btn-success" onclick="loadPage('{{route('api.updateExamType',$editExamType->id)}}','post','Changing',1,11);">
+                                            update
                                         </button>
-                                        <button type="reset" class="btn btn-secondary" onclick="loadPage('{{route('api.studentYearView')}}','GET','Changing',1,0)">
+                                        <button type="reset" class="btn btn-secondary" onclick="loadPage('{{route('api.ExamTypeView')}}','GET','Changing',1,0)">
                                             Cancel
                                         </button>
                                     </div>
@@ -62,6 +62,7 @@
         </div>
     </div>
 </div>
+
 
 
 

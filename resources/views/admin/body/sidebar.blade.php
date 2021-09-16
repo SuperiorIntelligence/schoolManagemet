@@ -215,6 +215,36 @@
 												</span>
                         </a>
                     </li>
+                    <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
+                        <a  href="#" class="m-menu__link " onclick="loadPage('{{route('api.ExamTypeView')}}','GET','Changing',1,0)">
+                            <i class="m-menu__link-bullet m-menu__link-bullet--line">
+                                <span></span>
+                            </i>
+                            <span class="m-menu__link-text">
+													Exam Type
+												</span>
+                        </a>
+                    </li>
+                    <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
+                        <a  href="#" class="m-menu__link " onclick="loadPage('{{route('api.schoolSubjectView')}}','GET','Changing',1,0)">
+                            <i class="m-menu__link-bullet m-menu__link-bullet--line">
+                                <span></span>
+                            </i>
+                            <span class="m-menu__link-text">
+													School Subject
+												</span>
+                        </a>
+                    </li>
+                    <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
+                        <a  href="#" class="m-menu__link " onclick="loadPage('{{route('api.assignSubjectView')}}','GET','Changing',1,0)">
+                            <i class="m-menu__link-bullet m-menu__link-bullet--line">
+                                <span></span>
+                            </i>
+                            <span class="m-menu__link-text">
+													Assign Subject
+												</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </li>

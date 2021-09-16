@@ -31,15 +31,15 @@
                         <div class="m-portlet__head-caption">
                             <div class="m-portlet__head-title">
                                 <h3 class="m-portlet__head-text">
-                                    Student Group
+                                    Details Assign Subject
                                 </h3>
                             </div>
                         </div>
                         <div class="m-portlet__head-tools">
                             <ul class="m-portlet__nav">
                                 <li class="m-portlet__nav-item">
-                                    <button type="submit" class="btn m-btn--pill  text-dark  btn-metal" onclick="loadPage('{{route('api.studentGroupAdd')}}','GET','Changing',1,0);">
-                                        Add Student Group
+                                    <button type="submit" class="btn m-btn--pill  text-dark  btn-metal" onclick="loadPage('{{route('api.assignSubjectAdd')}}','GET','Changing',1,0);">
+                                        Add Assign Subject
                                     </button>
 
                                 </li>
@@ -48,6 +48,7 @@
                     </div>
                     <div class="m-portlet__body">
                         <!--begin: Datatable -->
+                        <h4><strong>Assign Subject : </strong>{{$detailsData[0]["studentClass"]["name"]}}</h4>
                         <div  id="m_datatable_latest_orders">
 
                             <table class="table table-hover" >
@@ -57,39 +58,43 @@
                                         #
                                     </th>
                                     <th>
-                                        Name
+                                        Subject
                                     </th>
                                     <th>
-                                        Action
+                                        Full Mark
+                                    </th>
+                                    <th>
+                                        Pass Mark
+                                    </th>
+                                    <th>
+                                        subjective Mark
                                     </th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @if($allData->isEmpty())
+                                @if($detailsData->isEmpty())
                                     <tr>
                                         <th></th>
                                         <td><span class="text-danger">No data available in table</span></td>
                                         <td></td>
                                     </tr>
                                 @else
-                                    @foreach($allData as $key => $group)
+                                    @foreach($detailsData as $key => $detail)
                                         <tr>
                                             <th>
                                                 {{$key+1}}
                                             </th>
                                             <td>
-                                                {{$group->name}}
+                                                {{$detail["schoolSubject"]["name"]}}
                                             </td>
                                             <td>
-                                                <button type="button" class="btn m-btn--pill    btn-warning m-btn m-btn--custom"
-                                                        onclick="loadPage('{{route('api.studentGroupEdit',$group->id)}}','GET','Changing',1,0);">
-
-                                                    Edit
-                                                </button>
-                                                <button type="button" class="btn m-btn--pill    btn-danger m-btn m-btn--custom"
-                                                        onclick="loadPage('{{route('api.deleteStudentGroup',$group->id)}}','GET','Changing',1,0);">
-                                                    Delete
-                                                </button>
+                                                {{$detail->fullMark}}
+                                            </td>
+                                            <td>
+                                                {{$detail->passMark}}
+                                            </td>
+                                            <td>
+                                                {{$detail->subjectiveMark}}
                                             </td>
                                         </tr>
                                     @endforeach

@@ -48,7 +48,7 @@
                                         <button class="btn btn-success" onclick="loadPage('{{route('api.updateStudentYear',$editYear->id)}}','post','Changing',1,6);">
                                             Submit
                                         </button>
-                                        <button type="reset" class="btn btn-secondary">
+                                        <button type="reset" class="btn btn-secondary" onclick="loadPage('{{route('api.studentYearView')}}','GET','Changing',1,0)">
                                             Cancel
                                         </button>
                                     </div>

@@ -31,15 +31,15 @@
                         <div class="m-portlet__head-caption">
                             <div class="m-portlet__head-title">
                                 <h3 class="m-portlet__head-text">
-                                    Student Group
+                                    Assign Subject
                                 </h3>
                             </div>
                         </div>
                         <div class="m-portlet__head-tools">
                             <ul class="m-portlet__nav">
                                 <li class="m-portlet__nav-item">
-                                    <button type="submit" class="btn m-btn--pill  text-dark  btn-metal" onclick="loadPage('{{route('api.studentGroupAdd')}}','GET','Changing',1,0);">
-                                        Add Student Group
+                                    <button type="submit" class="btn m-btn--pill  text-dark  btn-metal" onclick="loadPage('{{route('api.assignSubjectAdd')}}','GET','Changing',1,0);">
+                                        Add Assign Subject
                                     </button>
 
                                 </li>
@@ -57,7 +57,7 @@
                                         #
                                     </th>
                                     <th>
-                                        Name
+                                        Class Name
                                     </th>
                                     <th>
                                         Action
@@ -72,23 +72,24 @@
                                         <td></td>
                                     </tr>
                                 @else
-                                    @foreach($allData as $key => $group)
+                                    @foreach($allData as $key => $assign)
                                         <tr>
                                             <th>
                                                 {{$key+1}}
                                             </th>
                                             <td>
-                                                {{$group->name}}
+                                                {{$assign["studentClass"]["name"]}}
                                             </td>
                                             <td>
                                                 <button type="button" class="btn m-btn--pill    btn-warning m-btn m-btn--custom"
-                                                        onclick="loadPage('{{route('api.studentGroupEdit',$group->id)}}','GET','Changing',1,0);">
+                                                        onclick="loadPage('{{route('api.assignSubjectEdit',$assign->classId)}}','GET','Changing',1,0);">
 
                                                     Edit
                                                 </button>
-                                                <button type="button" class="btn m-btn--pill    btn-danger m-btn m-btn--custom"
-                                                        onclick="loadPage('{{route('api.deleteStudentGroup',$group->id)}}','GET','Changing',1,0);">
-                                                    Delete
+                                                <button type="button" class="btn m-btn--pill    btn-info m-btn m-btn--custom"
+                                                        onclick="loadPage('{{route('api.detailsAssignSubject',$assign->classId)}}','GET','Changing',1,0);">
+
+                                                    Details
                                                 </button>
                                             </td>
                                         </tr>

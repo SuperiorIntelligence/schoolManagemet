@@ -48,7 +48,7 @@
                                         <button class="btn btn-success" onclick="loadPage('{{route('api.storeStudentClass')}}','post','Changing',1,5);">
                                             Submit
                                         </button>
-                                        <button type="reset" class="btn btn-secondary">
+                                        <button type="reset" class="btn btn-secondary" onclick="loadPage('{{route('api.studentClassView')}}','GET','Changing',1,0)">
                                             Cancel
                                         </button>
                                     </div>
