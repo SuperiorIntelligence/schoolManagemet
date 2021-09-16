@@ -59,7 +59,7 @@ Route::group(["middleware"=>"auth:api"],function (){
 
     //S User Management
     Route::prefix("user")->group(function (){
-        Route::get("/view",[AuthorController::class,"userView"])->name("api.s");
+        Route::get("/view",[AuthorController::class,"userView"])->name("api.userview");
         Route::get("/add",[AuthorController::class,"userAdd"])->name("api.userAdd");
         Route::post("/store",[AuthorController::class,"userStore"])->name("api.userStore");
         Route::get("/edit/{id}",[AuthorController::class,"userEdit"])->name("api.editUser");

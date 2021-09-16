@@ -213,23 +213,23 @@ function loadPage(url,method,place,kind,data){
         // forceReloadJS();
 
 
-        function load_js()
-        {
-            var head= document.getElementsByTagName('head')[0];
-            var script= document.createElement('script');
-            // script.src= 'source_file.js';
-            script.src= 'jquery.js';
-            script.src= 'backend/assets/vendors/base/vendors.bundle.js';
-            script.src= 'backend/assets/demo/demo12/base/scripts.bundle.js';
-            script.src= 'backend/assets/vendors/custom/fullcalendar/fullcalendar.bundle.js';
-            script.src= 'backend/assets/app/js/dashboard.js';
-            script.src= 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js';
-            script.src= 'helper.js';
-            script.src= 'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js';
-            script.src= 'backend/assets/app/js/dashboard.js';
-            head.appendChild(script);
-        }
-            load_js();
+        // function load_js()
+        // {
+        //     var head= document.getElementsByTagName('head')[0];
+        //     var script= document.createElement('script');
+        //     // script.src= 'source_file.js';
+        //     script.src= 'jquery.js';
+        //     script.src= 'backend/assets/vendors/base/vendors.bundle.js';
+        //     script.src= 'backend/assets/demo/demo12/base/scripts.bundle.js';
+        //     script.src= 'backend/assets/vendors/custom/fullcalendar/fullcalendar.bundle.js';
+        //     script.src= 'backend/assets/app/js/dashboard.js';
+        //     script.src= 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js';
+        //     script.src= 'helper.js';
+        //     script.src= 'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js';
+        //     script.src= 'backend/assets/app/js/dashboard.js';
+        //     head.appendChild(script);
+        // }
+        //     load_js();
 
 
 
@@ -245,11 +245,11 @@ function loadPage(url,method,place,kind,data){
                                                                             // Remove from comment
         if(err == "Error: Request failed with status code 422")
             alert("Error : Check the fields again")
-        else if(err == "Error: Request failed with status code 401")
+        else if(err == "Error: Request failed with status code 401" || err == "Error: Request failed with status code 405")
              window.location = "http://localhost:8000/login"
                                                                             // Remove from comment
         // console.log(err)
-        alert(err)
+        // alert(err)
         // else if(err == "Error: Request failed with status code 401" || err == "Error: Request failed with status code 405")
         //     window.location = "http://localhost:8000/login"
         // else if(err)

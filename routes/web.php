@@ -29,7 +29,8 @@ Route::get("register",function (){
 });
 
 Route::get("main",function (){
-        return view("pageLoad.main",['url'=>route('mainPage'),'method'=>'GET','location'=>'end','kind'=>1]);
+    return view("admin.index",["url"=>"","method"=>"","location"=>""]);
+//        return view("pageLoad.main",['url'=>route('mainPage'),'method'=>'GET','location'=>'end','kind'=>1]);
 })->name("main");
 
 
